@@ -1,4 +1,5 @@
 #!/bin/bash
+git config --global user.name "go2coding"
 
 git pull
 cd /home/ubuntu/fine_tuning/CatwalkGlimpse-AISelections
