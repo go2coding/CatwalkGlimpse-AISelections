@@ -14,8 +14,6 @@ yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 project_urls = {}
 
-if not os.path.isdir(new_dir + year):
-    os.makedirs(new_dir + year)
 if not os.path.isdir(new_dir + year + '/' + month):
     os.makedirs(new_dir + year + '/' + month)
 

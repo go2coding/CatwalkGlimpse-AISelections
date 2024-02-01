@@ -18,8 +18,7 @@ today_path = dir_path + year + '/' + month
 today = datetime.now().strftime("%Y-%m-%d")
 
 def createMarkdown(date, filename):
-    if not os.path.isdir(dir_path + year):
-        os.makedirs(dir_path + year)
+    
     if not os.path.isdir(today_path):
         os.makedirs(today_path)
 
