@@ -15,7 +15,6 @@ month = today.split("-")[1]
 
 today_path = dir_path + year + '/' + month
 
-today = datetime.now().strftime("%Y-%m-%d")
 
 def createMarkdown(date, filename):
 

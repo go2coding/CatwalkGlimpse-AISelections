@@ -10,7 +10,6 @@ today = datetime.now().strftime("%Y-%m-%d")
 year = today.split("-")[0]
 month = today.split("-")[1]
 
-yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 project_urls = {}
 
