@@ -29,6 +29,7 @@ for dirpath, dirnames, filenames in os.walk(trending_dir):
 
 def get_projects(filenames):
 
+
     result = {}
 
     for filename in filenames:
