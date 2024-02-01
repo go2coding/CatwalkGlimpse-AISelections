@@ -1,8 +1,9 @@
 #!/bin/bash
+
+cd /home/ubuntu/fine_tuning/CatwalkGlimpse-AISelections
 git config --global user.name "go2coding"
 
 git pull
-cd /home/ubuntu/fine_tuning/CatwalkGlimpse-AISelections
 
 python3 Scraper.py
 python3 FindNew.py
