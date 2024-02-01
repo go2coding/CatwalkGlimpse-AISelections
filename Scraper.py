@@ -18,7 +18,7 @@ today_path = dir_path + year + '/' + month
 today = datetime.now().strftime("%Y-%m-%d")
 
 def createMarkdown(date, filename):
-    
+
     if not os.path.isdir(today_path):
         os.makedirs(today_path)
 
@@ -56,6 +56,7 @@ def scrape(language, filename):
             # ownerImg = i("p.repo-list-meta a img").attr("src")
             # print(ownerImg)
             f.write(u"* [{title}]({url}):{description}\n".format(title=title, url=url, description=description))
+
 
 
 def main():
