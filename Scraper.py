@@ -37,7 +37,8 @@ def scrape(language, filename):
 
     url = 'https://github.com/trending/{language}'.format(language=language)
     r = requests.get(url, headers=HEADERS)
-    assert r.status_code == 200
+    if r.status_code != 200:
+        return
     
     d = pq(r.content)
     items = d('div.Box article.Box-row')
