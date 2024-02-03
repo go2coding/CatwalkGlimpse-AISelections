@@ -34,8 +34,7 @@ def scrape(language, filename):
         'Accept-Encoding'	: 'gzip,deflate,sdch',
         'Accept-Language'	: 'zh-CN,zh;q=0.8'
     }
-    language = urllib.parse.quote(language)
-    url = 'https://github.com/trending/{language}'.format(language=language)
+    url = 'https://github.com/trending/{language}'.format(language=urllib.parse.quote(language))
     r = requests.get(url, headers=HEADERS)
     if r.status_code != 200:
         return
