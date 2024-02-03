@@ -5,6 +5,7 @@ import codecs
 import requests
 import os
 from pyquery import PyQuery as pq
+import urllib.parse
 
 dir_path = "./data/trending/"
 
@@ -32,7 +33,7 @@ def scrape(language, filename):
         'Accept-Encoding'	: 'gzip,deflate,sdch',
         'Accept-Language'	: 'zh-CN,zh;q=0.8'
     }
-
+    language = urllib.parse.quote(language)
     url = 'https://github.com/trending/{language}'.format(language=language)
     r = requests.get(url, headers=HEADERS)
     if r.status_code != 200:
