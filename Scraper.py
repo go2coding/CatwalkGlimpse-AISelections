@@ -14,6 +14,7 @@ today = datetime.now().strftime("%Y-%m-%d")
 year = today.split("-")[0]
 month = today.split("-")[1]
 
+
 today_path = dir_path + year + '/' + month
 
 
