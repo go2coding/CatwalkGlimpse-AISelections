@@ -47,17 +47,14 @@ def get_projects(filenames):
         for category in categories:
             lines = category.split('\n')
             category_name = lines[0].strip()
-            projects = []
+            projects = result.get(category_name,[])
             for line in lines[1:]:
                 match = re.search(r'\* \[(.+)\]\((.+)\):(.+)', line)
-                if category_name == 'python':
-                    print(match)
                 if match:
                     project_name, url, description = match.groups()
                     projects.append(project_name)
                     project_urls[project_name] = (url, description)
             result[category_name] = projects
-        print(result.get('python', []))
 
     return result
 
@@ -76,9 +73,6 @@ projects_old = get_projects(old_files)
 with open(new_file, 'w',encoding='utf-8') as file:
     file.write("## " + today + "\n")
     for category, projects in projects_today.items():
-        if category == 'python':
-            old_p = projects_old.get(category, [])
-            print(old_p)
         new_projects = set(projects) - set(projects_old.get(category, []))
         if new_projects:
             file.write(f'#### {category}\n')
