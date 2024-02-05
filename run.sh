@@ -5,9 +5,9 @@ git config --global user.name "go2coding"
 
 git pull
 
-python3 Scraper.py
-python3 FindNew.py
-python3 SendMail.py
+#python3 Scraper.py
+#python3 FindNew.py
+#python3 SendMail.py
 
 git add ./
 today=$(date +%Y%m%d)

@@ -42,7 +42,7 @@ def get_projects(filenames):
         # 使用正则表达式匹配类别和项目
         categories = re.split(r'#### ', text)[1:]
 
-
+        print(filename)
         # 为每个类别添加项目
         for category in categories:
             lines = category.split('\n')
@@ -50,11 +50,14 @@ def get_projects(filenames):
             projects = []
             for line in lines[1:]:
                 match = re.search(r'\* \[(.+)\]\((.+)\):(.+)', line)
+                if category_name == 'python':
+                    print(match)
                 if match:
                     project_name, url, description = match.groups()
                     projects.append(project_name)
                     project_urls[project_name] = (url, description)
             result[category_name] = projects
+        print(result.get('python', []))
 
     return result
 
@@ -73,6 +76,9 @@ projects_old = get_projects(old_files)
 with open(new_file, 'w',encoding='utf-8') as file:
     file.write("## " + today + "\n")
     for category, projects in projects_today.items():
+        if category == 'python':
+            old_p = projects_old.get(category, [])
+            print(old_p)
         new_projects = set(projects) - set(projects_old.get(category, []))
         if new_projects:
             file.write(f'#### {category}\n')
