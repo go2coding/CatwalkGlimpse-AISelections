@@ -48,8 +48,10 @@ def get_projects(filenames):
             lines = category.split('\n')
             category_name = lines[0].strip()
             projects = result.get(category_name,[])
+            if category_name == 'python':
+                print(projects)
             for line in lines[1:]:
-                match = re.search(r'\* \[(.+)\]\((.+)\):(.+)', line)
+                match = re.search(r'\* \[(.+)\]\((.+)\):(.*)', line)
                 if match:
                     project_name, url, description = match.groups()
                     projects.append(project_name)
