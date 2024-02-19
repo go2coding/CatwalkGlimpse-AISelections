@@ -71,6 +71,7 @@ new_file = new_dir + year + '/' + month + '/' + f'{today}.md'
 projects_today = get_projects([today_file])
 projects_old = get_projects(old_files)
 
+
 # 找出今天新增的项目并将其写入到新的文件中
 with open(new_file, 'w',encoding='utf-8') as file:
     file.write("## " + today + "\n")
