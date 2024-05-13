@@ -66,7 +66,7 @@ def main():
     # create markdown file
     createMarkdown(strdate, filename)
 
-    languages = ['c','c#','c++','java','Kotlin','Objective-C','php','rust','python','swift','javascript','go','TypeScript']
+    languages = ['c','c#','c++','java','Kotlin','Objective-C','php','rust','python','swift','javascript','go','TypeScript','Vue']
 
     # write markdown
     for language in languages:
